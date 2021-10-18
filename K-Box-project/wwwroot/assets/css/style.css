@@ -85,22 +85,20 @@ h1, h2, h3, h4, h5, h6 {
     right: 15px;
     bottom: 15px;
     z-index: 996;
-    background: red;
-    width:100px;
-    height: 100px;
-    border-radius: 4px;
+    background: none;
+    border: 5px solid red;
+    width: 120px;
+    height: 60px;
     transition: all 0.4s;
-    border-radius:180px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: red;
 }
-
-    .back-to-top i {
-        font-size: 20px;
-        color: #fff;
-        line-height: 0;
-    }
 
     .back-to-top:hover {
         background: red;
+        border: 5px solid white;
+        color: white;
     }
 
     .back-to-top.active {
@@ -178,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
     #header .logo {
         font-size: 30px;
         margin: 0;
-        padding: 0;
+        padding: 0 20px;
         line-height: 1;
         font-weight: 600;
         letter-spacing: 0.8px;
@@ -217,6 +215,7 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
         list-style: none;
         align-items: center;
+        padding-right: 20px;
     }
 
     .navbar li {
@@ -722,6 +721,12 @@ section {
 
     .featured-services .title a {
         color: #111;
+    }
+
+    .featured-services .krum-desc {
+        width: 700px;
+        margin: 0 auto;
+        padding-bottom: 30px;
     }
 
 .featured-services .description {
@@ -1484,11 +1489,18 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact{
+    width: 100%;
+    padding: 60px 0 0 0;
+}
+
+
 .contact .info-box {
     color: #444444;
     text-align: center;
     box-shadow: 0 0 30px rgba(214, 215, 216, 0.3);
     padding: 20px 0 30px 0;
+    padding: 30px;
 }
 
     .contact .info-box i {
@@ -1514,9 +1526,20 @@ section {
     }
 
 .contact .php-email-form {
-    box-shadow: 0 0 30px rgba(214, 215, 216, 0.4);
+    /*box-shadow: 0 0 30px rgba(214, 215, 216, 0.4);*/
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 30px;
+    width: 100%;
 }
+    .contact-us{
+        margin-top: -8px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        background-color: #181818;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 
     .contact .php-email-form .error-message {
         display: none;
@@ -1619,11 +1642,9 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    background: #fff;
+    background: #ff5151;
     padding: 0 0 30px 0;
-    color: #444444;
     font-size: 14px;
-    background: #f1f6fe;
 }
 
     #footer .footer-newsletter {
@@ -1678,8 +1699,8 @@ section {
                 }
 
     #footer .footer-top {
-        padding: 60px 0 30px 0;
-        background: #fff;
+        padding: 30px 0;
+        
     }
 
         #footer .footer-top .footer-contact {
@@ -1777,19 +1798,51 @@ section {
     #footer .copyright {
         text-align: center;
         float: left;
+        padding-bottom: 20px;
+        color: #fff;
     }
+
+        #footer .copyright .social-links {
+            padding-top: 20px;
+        }
 
     #footer .credits {
         float: right;
         text-align: center;
         font-size: 13px;
-        color: #444444;
+        color: #fff;
     }
 
-@media (max-width: 768px) {
+@media (min-width: 968px) {
+    .contact .php-email-form{
+        width: 50%;
+    }
+
+    .contact-us .section-title{
+        display: block;
+    }
+}
+
+@media (max-width: 968px) {
     #footer .copyright, #footer .credits {
         float: none;
         text-align: center;
         padding: 2px 0;
+    }
+
+    .contact-us {
+        margin-top: -50px;
+        padding-bottom: 10px;
+    }
+
+    .featured-services .krum-desc{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #hero{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }

@@ -41,42 +41,22 @@
                     </div>
                     <div id="carousel-example" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                            <div class="carousel-item col-12 col-sm-6 col-md-3 col-lg-3 active">
+                            <div class="carousel-item col-sm-4 col-md-4 col-lg-3 active">
                                 <img src="assets/img/vip.jpg" class="img-fluid mx-auto d-block" alt="img1">
                                 <h1 class="p-2">VIP</h1>
                                 <p>Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.</p>
                             </div>
-                            <div class="carousel-item col-12 col-sm-6 col-md-3 col-lg-3">
+                            <div class="carousel-item col-sm-4 col-md-4 col-lg-3">
                                 <img src="assets/img/deluxe.jpg" class="img-fluid mx-auto d-block" alt="img2">
                                 <h1 class="p-2">Deluxe</h1>
                                 <p>Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.</p>
                             </div>
-                            <div class="carousel-item col-12 col-sm-6 col-md-3 col-lg-3">
+                            <div class="carousel-item col-sm-4 col-md-4 col-lg-3">
                                 <img src="assets/img/Superior.jpg" class="img-fluid mx-auto d-block" alt="img3">
                                 <h1 class="p-2">Superior</h1>
                                 <p>Swab barque gangway interloper chantey grog black jack gangway rutters.</p>
                             </div>
-                            <div class="carousel-item col-12 col-sm-6 col-md-3 col-lg-3">
-                                <img src="assets/img/premier.jpg" class="img-fluid mx-auto d-block" alt="img4">
-                                <h1 class="p-2">Premier</h1>
-                                <p>Swab barque interloper starboard grog black jack gangway rutters.</p>
-                            </div>
-                            <div class="carousel-item col-12 col-sm-6 col-md-3 col-lg-3">
-                                <img src="assets/img/vip.jpg" class="img-fluid mx-auto d-block" alt="img1">
-                                <h1 class="p-2">VIP</h1>
-                                <p>Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.</p>
-                            </div>
-                            <div class="carousel-item col-12 col-sm-6 col-md-3 col-lg-3">
-                                <img src="assets/img/deluxe.jpg" class="img-fluid mx-auto d-block" alt="img2">
-                                <h1 class="p-2">Deluxe</h1>
-                                <p>Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.</p>
-                            </div>
-                            <div class="carousel-item col-12 col-sm-6 col-md-3 col-lg-3">
-                                <img src="assets/img/Superior.jpg" class="img-fluid mx-auto d-block" alt="img3">
-                                <h1 class="p-2">Superior</h1>
-                                <p>Swab barque interloper chantey grog black jack gangway rutters.</p>
-                            </div>
-                            <div class="carousel-item col-12 col-sm-6 col-md-3 col-lg-3">
+                            <div class="carousel-item col-sm-4 col-md-4 col-lg-3">
                                 <img src="assets/img/premier.jpg" class="img-fluid mx-auto d-block" alt="img4">
                                 <h1 class="p-2">Premier</h1>
                                 <p>Swab barque interloper starboard grog black jack gangway rutters.</p>
@@ -87,6 +67,7 @@
             </div>
         </div>
     </section>
+
     <div class="bg-black">
         <div class="custom-shape-divider-top-1634406910">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -97,316 +78,64 @@
 
             <h1 class="text-light">ERBJUDANDE</h1>
             <div class="row">
-                <div class="col p-5">
-                    <h3 class="text-light">Oktoberfest</h3>
+
+
+                <div class="col p-6">
+                    <h3 class="text-light" style="padding-top:30px;">Oktoberfest</h3>
                     <p class="text-light">
                         A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
                     </p>
                 </div>
-                <div class="col photo_slider p-5" style="border-radius:180px;">
-                    <input type="radio" name="slider" class="slide-radio1" checked id="slider_1">
-                    <input type="radio" name="slider" class="slide-radio2" id="slider_2">
-                    <div class="slider-pagination">
-                        <label for="slider_1" class="page1"></label>
-                        <label for="slider_2" class="page2"></label>
+
+                <div class="col-lg-6">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators" style="margin: 0 auto; height: 0;">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div>
+                                    <img src="/assets/img/oktoberfest.gif" alt="Oktoberfest" style="width: 100%; height: 400px; object-fit: cover;">
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="/assets/img/studentrabatt.jpg" alt="StudentRabatt" style="width: 100%; height: 400px; object-fit: cover;">
+                            </div>
+
+                            <div class="item">
+                                <img src="/assets/img/AW.jpg" alt="AW" style="width: 100%; height: 400px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <div class="next control">
-                        <label for="slider_1" class="numb1">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <path d="M298.3 256L131.1 81.9c-4.2-4.3-4.1-11.4.2-15.8l29.9-30.6c4.3-4.4 11.3-4.5 15.5-.2L380.9 248c2.2 2.2 3.2 5.2 3 8.1.1 3-.9 5.9-3 8.1L176.7 476.8c-4.2 4.3-11.2 4.2-15.5-.2L131.3 446c-4.3-4.4-4.4-11.5-.2-15.8L298.3 256z" />
-                            </svg>
-                        </label>
-                        <label for="slider_2" class="numb2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <path d="M298.3 256L131.1 81.9c-4.2-4.3-4.1-11.4.2-15.8l29.9-30.6c4.3-4.4 11.3-4.5 15.5-.2L380.9 248c2.2 2.2 3.2 5.2 3 8.1.1 3-.9 5.9-3 8.1L176.7 476.8c-4.2 4.3-11.2 4.2-15.5-.2L131.3 446c-4.3-4.4-4.4-11.5-.2-15.8L298.3 256z" />
-                            </svg>
-                        </label>
-                    </div>
-                    <div class="previous control">
-                        <label for="slider_1" class="numb1">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <path d="M213.7 256L380.9 81.9c4.2-4.3 4.1-11.4-.2-15.8l-29.9-30.6c-4.3-4.4-11.3-4.5-15.5-.2L131.1 247.9c-2.2 2.2-3.2 5.2-3 8.1-.1 3 .9 5.9 3 8.1l204.2 212.7c4.2 4.3 11.2 4.2 15.5-.2l29.9-30.6c4.3-4.4 4.4-11.5.2-15.8L213.7 256z" />
-                            </svg>
-                        </label>
-                        <label for="slider_2" class="numb2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <path d="M213.7 256L380.9 81.9c4.2-4.3 4.1-11.4-.2-15.8l-29.9-30.6c-4.3-4.4-11.3-4.5-15.5-.2L131.1 247.9c-2.2 2.2-3.2 5.2-3 8.1-.1 3 .9 5.9 3 8.1l204.2 212.7c4.2 4.3 11.2 4.2 15.5-.2l29.9-30.6c4.3-4.4 4.4-11.5.2-15.8L213.7 256z" />
-                            </svg>
-                        </label>
-                    </div>
-                    <div class="slider slide_img_01"></div>
-                    <div class="slider slide_img_02"></div>
                 </div>
             </div>
         </div>
         <svg style="transform:rotate(180deg)" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill" fill="#FFFFFF" fill-opacity="1"></path></svg>
-    </div>    
-    <!-- ======= Services Section ======= -->
-    @*<section id="services" class="services">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Services</h2>
-                <h3>Check our <span>Services</span></h3>
-                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                        <h4><a href="">Lorem Ipsum</a></h4>
-                        <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-file"></i></div>
-                        <h4><a href="">Sed ut perspiciatis</a></h4>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-tachometer"></i></div>
-                        <h4><a href="">Magni Dolores</a></h4>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-world"></i></div>
-                        <h4><a href="">Nemo Enim</a></h4>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-slideshow"></i></div>
-                        <h4><a href="">Dele cardo</a></h4>
-                        <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-arch"></i></div>
-                        <h4><a href="">Divera don</a></h4>
-                        <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
-    </section>*@<!-- End Services Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <!--<section id="testimonials" class="testimonials">
-        <div class="container" data-aos="zoom-in">
-
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>--><!-- End testimonial item -->
-
-                    <!--<div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>--><!-- End testimonial item -->
-
-                    <!--<div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>--><!-- End testimonial item -->
-
-                    <!--<div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                            <h3>Matt Brandon</h3>
-                            <h4>Freelancer</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>--><!-- End testimonial item -->
-
-                    <!--<div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                            <h3>John Larson</h3>
-                            <h4>Entrepreneur</h4>
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>--><!-- End testimonial item -->
-
-                <!--</div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </div>
-    </section>--><!-- End Testimonials Section -->
-
-    <!-- ======= Team Section ======= -->
-    @*<section id="team" class="team section-bg">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Team</h2>
-                <h3>Our Hardworking <span>Team</span></h3>
-                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
-            </div>
-
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>*@<!-- End Team Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
 
-            <div class="section-title">
-                <h3><span>HITTA OSS</span></h3>
-                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
-            </div>
-
-            @*<div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-6">
-                    <div class="info-box mb-4">
-                        <i class="bx bx-map"></i>
-                        <h3>Our Address</h3>
-                        <p>A108 Adam Street, New York, NY 535022</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="info-box  mb-4">
-                        <i class="bx bx-envelope"></i>
-                        <h3>Email Us</h3>
-                        <p>contact@example.com</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="info-box  mb-4">
-                        <i class="bx bx-phone-call"></i>
-                        <h3>Call Us</h3>
-                        <p>+1 5589 55488 55</p>
-                    </div>
-                </div>
-
-            </div>*@
+        <div class="section-title">
+            <h3><span>HITTA OSS</span></h3>
+            <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
@@ -414,39 +143,55 @@
                 <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 385px;" allowfullscreen></iframe>
 
                 <div class="contact-us">
-                    @*<div class="col-lg-12 section-title">
-                        <h3><span>KONTAKTA OSS</span></h3>
-                    </div>*@
+                    <div class="col-lg-6 section-title">
+                        <h3 class="top"><span>KONTAKTA OSS</span></h3>
 
+                    </div>
                     <div class="row">
                         <form action="forms/contact.php" method="post" role="form" class="col-lg-6 php-email-form">
                             <div class="row">
                                 <div class="col form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Ditt Namn" required>
                                 </div>
                                 <div class="col form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Ditt E-post" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Titel" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                                <textarea class="form-control" name="message" rows="5" placeholder="Meddelande" required></textarea>
                             </div>
                             <div class="my-3">
                                 <div class="loading">Loading</div>
                                 <div class="error-message"></div>
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
                             </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <div class="text-center" style="font-size: 16px;"><button type="submit">Skicka</button></div>
                         </form>
 
-                        <h3 class="col-lg-6 section-title"><span>KONTAKTA OSS</span></h3>
+                        <div class="col-lg-6 section-title">
+                            <h3 class="bottom"><span>KONTAKTA OSS</span></h3>
+                            <h4>ÖPPETTIDER</h4>
+                            <ul style="list-style: none;">
+                                <li>Ons  19 – 02</li>
+                                <li>Tors  19 – 02</li>
+                                <li>Fre  19 – 03</li>
+                                <li>Lör  18 – 03</li>
+
+                                <li>07-34 23 36</li>
+                                <li>MAGASINSTORGET 3,</li>
+                                <li>582 26 Linköping</li>
+                                <li>info@kboxkaraoke.se</li>
+                            </ul>
+
+                        </div>
+
+                        </div>
                     </div>
+
                 </div>
-                
-            </div>
 
         </div>
     </section><!-- End Contact Section -->

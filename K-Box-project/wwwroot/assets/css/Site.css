@@ -380,6 +380,10 @@
             pointer-events: auto;
             transition: 1s;
         }
+
+.progress-bar {
+    background-color: #74e88f;
+}
 .progresses {
     position: relative;
     max-width: 70%;
@@ -401,8 +405,8 @@
         }
 
             .progresses ul li.blue {
-                color: #3268ff;
-                background-color: lightgreen
+                color: #5d616e;
+                background-color: #74e88f;
             }
 
             .progresses ul li::after {
@@ -429,9 +433,9 @@
 }
 
 .progresses .progress {
-    height: 0.8rem;
+    height: 6px;
     width: 100%;
-    top: 33px;
+    top: 36px;
     position: absolute;
     background-color: #f0f0f0;
     border-radius: 10px

@@ -54,7 +54,8 @@ namespace K_Box_project.Pages
             //}
             //else
             //{
-            ViewData["Totalttime"] = TimeEnd > TimeStart ? TimeEnd - TimeStart : TimeEnd.AddDays(1) - TimeStart;
+            //ViewData["Totalttime"] = TimeEnd > TimeStart ? TimeEnd - TimeStart : TimeEnd.AddDays(1) - TimeStart;
+            ViewData["Totalttime"] = TimeEnd - TimeStart;
             //}
         }
     }

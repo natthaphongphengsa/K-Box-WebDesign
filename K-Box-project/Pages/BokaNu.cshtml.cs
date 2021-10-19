@@ -33,7 +33,7 @@ namespace K_Box_project.Pages
 
         [Required(ErrorMessage = "Var god och välja ett datum!")]
         [DataType(DataType.Date)]
-        public DateTime? Date { get; set; }
+        public DateTime Date { get; set; }
 
         [Required(ErrorMessage = "Var god och välja start tid!")]
         [DataType(DataType.Time)]
@@ -53,40 +53,41 @@ namespace K_Box_project.Pages
         public IList<BookInfo> informations { get; set; }
         public void OnGet()
         {
+            Date = DateTime.Now;
         }
         public IActionResult OnPost()
         {
             if (ModelState.IsValid)
             {
-                if (Start == End || End < Start)
+                TimeSpan offset = Date - Start.Date;
+                DateTime openingTime = DateTime.Today.Add(new TimeSpan(hours: 18, minutes: 0, seconds: 0).Add(offset));
+                DateTime closingTime = DateTime.Today.Add(new TimeSpan(hours: 3, minutes: 0, seconds: 0).Add(offset));
+                Start = Start.Add(offset);
+                End = End.Add(offset);
+                if (End < Start) End = End.AddDays(1);
+                if (Start < DateTime.Now)
                 {
-                    DateTime time = new DateTime(2021, 02, 12, 03, 00, 00);
-                    if (End < Start && End > DateTime.MinValue)
-                    {
-                        if (End.Hour > time.Hour)
-                        {
-                            if (End < Start)
-                            {
-                                ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
-                                return Page();
-                            }
-                            ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara tidigare än {time.ToString("t")}");
-                            return Page();
-                        }                        
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
-                        return Page();
-                    }
-                }                
+                    //Error message on past date
+                    return Page();
+                }
+                if (Start == End)
+                {
+                    ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden kan inte vara samma som start tiden");
+                    return Page();
+                }
+                if ((End - Start).Hours > 3)
+                {
+                    string time = Start.AddHours(3) > closingTime && Start.AddHours(3) < openingTime ? closingTime.ToString("t") : Start.AddHours(3).ToString("t");
+                    ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senast {time}");
+                    return Page();
+                }
                 informations = new List<BookInfo>()
                     {
                     new BookInfo() { type = "firstname", text = $"{Firstname}" },
                     new BookInfo() { type = "lastname", text = $"{Lastname}" },
                     new BookInfo() { type = "stad", text = $"{Stad}" },
                     new BookInfo() { type = "mobile", text = $"{Mobile}" },
-                    new BookInfo() { type = "date", datetime = Date.Value },
+                    new BookInfo() { type = "date", datetime = Date },
                     new BookInfo() { type = "timesstart", datetime = Start },
                     new BookInfo() { type = "timeend", datetime = End },
                     new BookInfo() { type = "rum", text = $"{Rum}" },

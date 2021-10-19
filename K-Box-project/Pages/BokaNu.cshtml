@@ -3,7 +3,7 @@
 @{
 }
 <!-- ======= Skills Section ======= -->
-<section id="BokaNu" class="w-50 mr-auto ml-auto">
+<section id="BokaNu">
     <div class="container" data-aos="fade-up">
         <h1 id="Title-H1" class="text-center">BOKA TID</h1>
         <div class="progresses py-4">
@@ -46,12 +46,35 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Start tid*</label>
-                    <input asp-for="@Model.Start" class="form-control" min="18:00"/>
+                    <select asp-for="@Model.Start" class="form-select">
+                        <option>18:00</option>
+                        <option>19:00</option>
+                        <option>20:00</option>
+                        <option>21:00</option>
+                        <option>22:00</option>
+                        <option>23:00</option>
+                        <option>00:00</option>
+                        <option>01:00</option>
+                        <option>02:00</option>
+                        <option>03:00</option>
+                    </select>
+                    @*<input asp-for="@Model.Start" class="form-control" min="18:00"/>*@
                     <span asp-validation-for="@Model.Start" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Slut tid*</label>
-                    <input asp-for="@Model.End" class="form-control"/>
+                    <select asp-for="@Model.End" class="form-select">
+                        <option>19:00</option>
+                        <option>20:00</option>
+                        <option>21:00</option>
+                        <option>22:00</option>
+                        <option>23:00</option>
+                        <option>00:00</option>
+                        <option>01:00</option>
+                        <option>02:00</option>
+                        <option>03:00</option>
+                    </select>
+                    @*<input asp-for="@Model.End" class="form-control"/>*@
                     <span asp-validation-for="@Model.End" class="text-danger"></span>
                     <span class="text-danger">@Html.ValidationMessage("Invalid")</span>
                 </div>
@@ -92,7 +115,7 @@
                     <textarea asp-for="Message" class="form-control" type="textarea" maxlength="140" rows="7"></textarea>
                 </div>
                 <div class="form-group justify-content-center d-flex">
-                    <button type="submit" id="submit" name="submit" class="btn text-success bg-white btn-success" style="border: 3px solid; border-radius: 16px; padding:0px 12px 0px 12px ;">Forsätt</button>
+                    <button type="submit" id="submit" name="submit" class="btn text-success bg-white btn-success">Forsätt</button>
                 </div>
             </form>
         </div>

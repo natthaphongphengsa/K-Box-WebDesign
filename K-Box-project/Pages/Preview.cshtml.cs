@@ -43,7 +43,19 @@ namespace K_Box_project.Pages
             Message = preview.First(u => u.type == "message").text;
             Image = images.First(i => i.type == Rum).text;
             People = int.Parse(preview.First(p => p.type == "people").text);
-            ViewData["Totalttime"] = TimeEnd - TimeStart;
+
+            //DateTime customtime = new DateTime(2021, 05, 25, 00, 00, 00);
+            //DateTime beforemidnight = new DateTime(2021, 05, 25, 23, 00, 00);
+            //TimeSpan totalttime;
+            //if (TimeEnd > customtime)
+            //{
+            //    //totalttime = beforemidnight - TimeStart;
+            //    totalttime = Convert.ToInt32(beforemidnight.Hour) - TimeStart.Hour;
+            //}
+            //else
+            //{
+            ViewData["Totalttime"] = TimeEnd > TimeStart ? TimeEnd - TimeStart : TimeEnd.AddDays(1) - TimeStart;
+            //}
         }
     }
 }

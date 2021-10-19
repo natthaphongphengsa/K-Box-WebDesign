@@ -2,7 +2,7 @@
 @model K_Box_project.Pages.PreviewModel
 @{
 }
-<section id="BokaNu" class="w-50 mr-auto ml-auto">
+<section id="BokaNu">
     <div class="container" data-aos="fade-up">
         <h1 id="Title-H1" class="text-center">BOKA TID</h1>
         <div class="progresses py-4">
@@ -18,9 +18,9 @@
         <div class="d-flex row overflow-hidden pt-2" style="max-height:500px;">
             <img src="@Model.Image" class="rounded" />
         </div>
-        <div class="container p-3">
+        <div class="container pt-3">
+            <h3>Totalt tid: @ViewBag.Totalttime h</h3>
             <div class="row align-items-start">
-                <h3>Totalt tid: @ViewBag.Totalttime</h3>
                 <div class="col">
                     <p>
                         Plats*
@@ -68,6 +68,8 @@
             </div>
         </div>
     </div>
-    <a asp-page="/Paymnet" class="btn text-success bg-white btn-success" style="border: 3px solid; border-radius: 16px; padding:0px 12px 0px 12px ;">Slutför</a>
-    <a href='javascript:history.go(-1)' class="btn text-success bg-white btn-success" style="border: 3px solid; border-radius: 16px; padding:0px 12px 0px 12px ;">Tillbaka</a>
+    <div class="container d-flex justify-content-center">
+        <a asp-page="/Paymnet" class="btn text-success bg-white btn-success" style="border: 3px solid; border-radius: 16px; padding:0px 12px 0px 12px ;">Slutför</a>
+        <a href='javascript:history.go(-1)' class="btn text-success bg-white btn-success" style="border: 3px solid; border-radius: 16px; padding:0px 12px 0px 12px ;">Tillbaka</a>
+    </div>    
 </section>

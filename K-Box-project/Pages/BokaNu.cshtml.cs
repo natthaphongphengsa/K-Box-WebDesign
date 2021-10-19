@@ -65,9 +65,14 @@ namespace K_Box_project.Pages
                     {
                         if (End.Hour > time.Hour)
                         {
+                            if (End < Start)
+                            {
+                                ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
+                                return Page();
+                            }
                             ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara tidigare än {time.ToString("t")}");
                             return Page();
-                        }
+                        }                        
                     }
                     else
                     {

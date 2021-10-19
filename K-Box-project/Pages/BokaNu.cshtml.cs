@@ -152,19 +152,3 @@ namespace K_Box_project.Pages
         }
     }
 }
-//informations = new List<BookInfo>()
-//                    {
-//                    new BookInfo() { type = "firstname", text = $"{Firstname}" },
-//                    new BookInfo() { type = "lastname", text = $"{Lastname}" },
-//                    new BookInfo() { type = "epost", text = $"{Epost}" },
-//                    new BookInfo() { type = "stad", text = $"{Stad}" },
-//                    new BookInfo() { type = "mobile", text = $"{Mobile}" },
-//                    new BookInfo() { type = "date", datetime = Date.Value },
-//                    new BookInfo() { type = "timesstart", datetime = Start },
-//                    new BookInfo() { type = "timeend", datetime = End },
-//                    new BookInfo() { type = "rum", text = $"{Rum}" },
-//                    new BookInfo() { type = "message", text = $"{Message}" },
-//                    new BookInfo() { type = "people", text = $"{People.ToString()}" },
-//                    };
-//HttpContext.Session.Set("informationlist", informations);
-//return RedirectToPage("/Preview");

@@ -62,46 +62,100 @@ namespace K_Box_project.Pages
         {
             if (ModelState.IsValid)
             {
-                if (Start == End || End < Start)
+                DateTime time = new DateTime(2021, 02, 12, 03, 00, 00);
+                var totalttime = End > Start ? End - Start : End.AddDays(1) - Start;
+                if (totalttime.Hours <= 3)
                 {
-                    DateTime time = new DateTime(2021, 02, 12, 03, 00, 00);
-                    if (End < Start && End > DateTime.MinValue)
+                    if (End < Start)
                     {
-                        if (End.Hour > time.Hour)
+                        if (End.Hour < 00)
                         {
-                            if (End < Start)
-                            {
-                                ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
-                                return Page();
-                            }
-                            ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara tidigare än {time.ToString("t")}");
+
+                        }
+                        else
+                        {
+                            informations = new List<BookInfo>()
+                                                {
+                                                new BookInfo() { type = "firstname", text = $"{Firstname}" },
+                                                new BookInfo() { type = "lastname", text = $"{Lastname}" },
+                                                new BookInfo() { type = "epost", text = $"{Epost}" },
+                                                new BookInfo() { type = "stad", text = $"{Stad}" },
+                                                new BookInfo() { type = "mobile", text = $"{Mobile}" },
+                                                new BookInfo() { type = "date", datetime = Date.Value },
+                                                new BookInfo() { type = "timesstart", datetime = Start },
+                                                new BookInfo() { type = "timeend", datetime = End },
+                                                new BookInfo() { type = "rum", text = $"{Rum}" },
+                                                new BookInfo() { type = "message", text = $"{Message}" },
+                                                new BookInfo() { type = "people", text = $"{People.ToString()}" },
+                                                };
+                            HttpContext.Session.Set("informationlist", informations);
+                            return RedirectToPage("/Preview");
+                        }
+                    }
+                    else if(End > Start)
+                    {
+                        informations = new List<BookInfo>()
+                                                {
+                                                new BookInfo() { type = "firstname", text = $"{Firstname}" },
+                                                new BookInfo() { type = "lastname", text = $"{Lastname}" },
+                                                new BookInfo() { type = "epost", text = $"{Epost}" },
+                                                new BookInfo() { type = "stad", text = $"{Stad}" },
+                                                new BookInfo() { type = "mobile", text = $"{Mobile}" },
+                                                new BookInfo() { type = "date", datetime = Date.Value },
+                                                new BookInfo() { type = "timesstart", datetime = Start },
+                                                new BookInfo() { type = "timeend", datetime = End },
+                                                new BookInfo() { type = "rum", text = $"{Rum}" },
+                                                new BookInfo() { type = "message", text = $"{Message}" },
+                                                new BookInfo() { type = "people", text = $"{People.ToString()}" },
+                                                };
+                        HttpContext.Session.Set("informationlist", informations);
+                        return RedirectToPage("/Preview");
+                    }
+                }
+                else
+                {
+                    if (End < Start)
+                    {
+                        if (End < Start && (End.Hour > 00 && End.Hour < 03))
+                        {
+                            ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
                             return Page();
-                        }                        
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("Overtime", "Du får max 3 timmar på bokningen");
+                            return Page();
+                        }
                     }
                     else
                     {
+                        if (End < Start && (End.Hour < 00 && End.Hour > 03))
+                        {
+                            ModelState.AddModelError("Overtime", "Du får max 3 timmar på bokningen");
+                            return Page();
+                        }
                         ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
                         return Page();
-                    }
-                }                
-                informations = new List<BookInfo>()
-                    {
-                    new BookInfo() { type = "firstname", text = $"{Firstname}" },
-                    new BookInfo() { type = "lastname", text = $"{Lastname}" },
-                    new BookInfo() { type = "epost", text = $"{Epost}" },
-                    new BookInfo() { type = "stad", text = $"{Stad}" },
-                    new BookInfo() { type = "mobile", text = $"{Mobile}" },
-                    new BookInfo() { type = "date", datetime = Date.Value },
-                    new BookInfo() { type = "timesstart", datetime = Start },
-                    new BookInfo() { type = "timeend", datetime = End },
-                    new BookInfo() { type = "rum", text = $"{Rum}" },
-                    new BookInfo() { type = "message", text = $"{Message}" },
-                    new BookInfo() { type = "people", text = $"{People.ToString()}" },
-                    };
-                HttpContext.Session.Set("informationlist", informations);
-                return RedirectToPage("/Preview");
+                    }                    
+                }
             }
             return Page();
         }
     }
 }
+//informations = new List<BookInfo>()
+//                    {
+//                    new BookInfo() { type = "firstname", text = $"{Firstname}" },
+//                    new BookInfo() { type = "lastname", text = $"{Lastname}" },
+//                    new BookInfo() { type = "epost", text = $"{Epost}" },
+//                    new BookInfo() { type = "stad", text = $"{Stad}" },
+//                    new BookInfo() { type = "mobile", text = $"{Mobile}" },
+//                    new BookInfo() { type = "date", datetime = Date.Value },
+//                    new BookInfo() { type = "timesstart", datetime = Start },
+//                    new BookInfo() { type = "timeend", datetime = End },
+//                    new BookInfo() { type = "rum", text = $"{Rum}" },
+//                    new BookInfo() { type = "message", text = $"{Message}" },
+//                    new BookInfo() { type = "people", text = $"{People.ToString()}" },
+//                    };
+//HttpContext.Session.Set("informationlist", informations);
+//return RedirectToPage("/Preview");

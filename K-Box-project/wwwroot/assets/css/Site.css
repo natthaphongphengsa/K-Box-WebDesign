@@ -430,17 +430,18 @@
 #step-2::after {
     content: "Förhandsvisning";
     text-align: center;
+    left: -50px;
 }
 
 #step-3::after {
-    text-align:center;
-    content: "Betalning"
+    text-align: center;
+    content: "Slutför"
 }
 
 .progresses .progress {
     height: 6px;
     width: 100%;
-    top: 30px;
+    top: 28px;
     position: absolute;
     background-color: #f0f0f0;
     border-radius: 10px
@@ -469,6 +470,15 @@
 .form-label {
     font-size: 18px;
 }
+.BokaNu {
+    background-attachment: inherit;
+    background-size: contain;
+    background-position-y: 98px;
+    width: 70%;
+    margin: auto;
+    background-image: url(/assets/img/MenyPattern.png);
+    background-repeat: no-repeat;
+}
 @media (max-width:426px)
 {
     .progresses ul li::after {
@@ -478,10 +488,19 @@
         width: 90px;
         font-size: 11px;
     }
+    #step-2::after {
+        left: -28px;
+    }
+}
+@media (max-width:1024px) {
+    .BokaNu {
+        width: 100%;
+        margin: auto;
+    }
 }
 #submit {
     border: 3px solid;
-    border-radius: 16px;
-    padding: 0px 12px 0px 12px;
+    border-radius: 10px;
+    width:135px;
     font-size: 18px;
 }

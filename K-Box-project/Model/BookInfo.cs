@@ -9,6 +9,7 @@ namespace K_Box_project.Model
     {
         public string type {get;set;}
         public string text { get; set; }
+        public int reaprice { get; set; }
         public DateTime datetime { get; set; }
     }
 }

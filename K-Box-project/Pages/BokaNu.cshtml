@@ -2,10 +2,11 @@
 @model K_Box_project.Pages.BokaNuModel
 @{
 }
-<!-- ======= Skills Section ======= -->
-<section id="BokaNu">
-    <div class="container" data-aos="fade-up">
+
+<section id="BokaNu" class="BokaNu">
+    <div class="container" data-aos="fade-up" style="padding:100px 0px 0px;">
         <h1 id="Title-H1" class="text-center">BOKA TID</h1>
+        <p class="text-center m-auto" style="width:65%;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
         <div class="progresses py-4">
             <ul class="d-flex align-items-center justify-content-between">
                 <li id="step-1" class="blue"></li>
@@ -13,7 +14,7 @@
                 <li id="step-3"></li>
             </ul>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
         <div class="form-area p-5 rounded-3">
@@ -111,6 +112,11 @@
                     <span asp-validation-for="Mobile" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    <label class="form-label">E-post*</label>
+                    <input asp-for="Epost" type="email" class="form-control">
+                    <span asp-validation-for="Epost" class="text-danger"></span>
+                </div>
+                <div class="form-group">
                     <label class="form-label">Meddelande(Frivilig)*</label>
                     <textarea asp-for="Message" class="form-control" type="textarea" maxlength="140" rows="7"></textarea>
                 </div>
@@ -120,7 +126,7 @@
             </form>
         </div>
     </div>
-</section><!-- End Skills Section -->
+</section>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

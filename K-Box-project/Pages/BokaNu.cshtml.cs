@@ -48,7 +48,11 @@ namespace K_Box_project.Pages
 
         [Required]
         public int People { get; set; }
+
         public string Message { get; set; }
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        public string Epost { get; set; }
 
         public IList<BookInfo> informations { get; set; }
         public void OnGet()
@@ -84,6 +88,7 @@ namespace K_Box_project.Pages
                     {
                     new BookInfo() { type = "firstname", text = $"{Firstname}" },
                     new BookInfo() { type = "lastname", text = $"{Lastname}" },
+                    new BookInfo() { type = "epost", text = $"{Epost}" },
                     new BookInfo() { type = "stad", text = $"{Stad}" },
                     new BookInfo() { type = "mobile", text = $"{Mobile}" },
                     new BookInfo() { type = "date", datetime = Date.Value },

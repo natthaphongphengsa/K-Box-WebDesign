@@ -465,3 +465,13 @@
 .form-label {
     font-size: 18px;
 }
+@media (max-width:426px)
+{
+    .progresses ul li::after {
+        position: absolute;
+        top: 35px;
+        left: -27px;
+        width: 90px;
+        font-size: 11px;
+    }
+}

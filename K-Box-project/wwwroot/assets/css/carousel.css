@@ -6,26 +6,26 @@ Attribution required
 */
 
 
-/*@media (min-width: 768px) and (max-width: 991px) {*/
+@media (min-width: 768px) and (max-width: 991px) {
   /* Show 4th slide on md  if col-md-4*/
-    /*.carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
-        right: -33.3333%;*/  /*change this with javascript in the future*/
-        /*z-index: -1;
+        right: -33.3333%;  /*change this with javascript in the future*/
+        z-index: -1;
         display: block;
         visibility: visible;
     }
 
 }
 
-@media (min-width: 576px) and (max-width: 768px) {*/
+@media (min-width: 576px) and (max-width: 768px) {
   /* Show 3rd slide on sm  if col-sm-6*/
-    /*.carousel-inner .active.col-sm-6.carousel-item + .carousel-item + .carousel-item {
+    .carousel-inner .active.col-sm-6.carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
-        right: -50%;*/  /*change this with javascript in the future*/
-        /*z-index: -1;
+        right: -50%;  /*change this with javascript in the future*/
+        z-index: -1;
         display: block;
         visibility: visible;
     }
@@ -35,10 +35,10 @@ Attribution required
 	
     .carousel-item {
         margin-right: 0;
-    }*/
+    }
 
     /* show 2 items */
-    /*.carousel-inner .active + .carousel-item {
+    .carousel-inner .active + .carousel-item {
         display: block;
     }
     
@@ -50,29 +50,29 @@ Attribution required
     .carousel-inner .carousel-item-next {
       position: relative;
       transform: translate3d(0, 0, 0);
-    }*/
+    }
     
     /* left or forward direction */
-    /*.active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
     .carousel-item-next.carousel-item-left + .carousel-item,
     .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
         position: relative;
         transform: translate3d(-100%, 0, 0);
         visibility: visible;
-    }*/ 
+    } 
     
     /* farthest right hidden item must be abso position for animations */
-    /*.carousel-inner .carousel-item-prev.carousel-item-right {
+    .carousel-inner .carousel-item-prev.carousel-item-right {
         position: absolute;
         top: 0;
         left: 0;
         z-index: -1;
         display: block;
         visibility: visible;
-    }*/
+    }
     
     /* right or prev direction */
-    /*.active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
     .carousel-item-prev.carousel-item-right + .carousel-item,
     .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
         position: relative;
@@ -82,13 +82,13 @@ Attribution required
         visibility: visible;
     }
 
-}*/
+}
 
 /*MD*/
-/*@media (min-width: 768px) {*/
+@media (min-width: 768px) {
 
     /* show 3rd of 3 item slide */
-  /*.carousel-inner .active + .carousel-item + .carousel-item {
+  .carousel-inner .active + .carousel-item + .carousel-item {
         display: block;
     }
  
@@ -100,18 +100,18 @@ Attribution required
     .carousel-inner .carousel-item-next {
       position: relative;
       transform: translate3d(0, 0, 0);
-    }*/
+    }
     
     
     /* left or forward direction */
-    /*.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
         position: relative;
         transform: translate3d(-100%, 0, 0);
         visibility: visible;
-    }*/
+    }
     
     /* right or prev direction */
-    /*.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
         position: relative;
         transform: translate3d(100%, 0, 0);
         visibility: visible;
@@ -119,40 +119,40 @@ Attribution required
         visibility: visible;
     }
 
-}*/
+}
 
 
 /*LG */
-/*@media (min-width: 991px) {*/
+@media (min-width: 991px) {
 
     /* show 4th item */
-    /*.carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
+    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
         display: block;
     }
     
     .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
         transition: none;
-    }*/
+    }
     
     /* Show 5th slide on lg if col-lg-3 */
-    /*.carousel-inner .active.col-lg-3.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    .carousel-inner .active.col-lg-3.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
-        right: -25%;*/  /*change this with javascript in the future*/
-        /*z-index: -1;
+        right: -25%;  /*change this with javascript in the future*/
+        z-index: -1;
         display: block;
         visibility: visible;
-    }*/
+    }
     
     /* left or forward direction */
-    /*.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
         position: relative;
         transform: translate3d(-100%, 0, 0);
         visibility: visible;
-    }*/
+    }
     
     /* right or prev direction //t - previous slide direction last item animation fix */
-    /*.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
         position: relative;
         transform: translate3d(100%, 0, 0);
         visibility: visible;
@@ -160,7 +160,7 @@ Attribution required
         visibility: visible;
     }
 
-}*/
+}
 
 /*LG 6th  -  if you want a carousel with 6 slides */
 @media (min-width: 991px) {
@@ -209,72 +209,4 @@ Attribution required
         visibility: visible;
     }
 */
-}
-
-
-
-
-
-
-@media (min-width: 768px) {
-
-    /* show 3 items */
-    .carouselPrograms .carousel-inner .active,
-    .carouselPrograms .carousel-inner .active + .carousel-item,
-    .carouselPrograms .carousel-inner .active + .carousel-item + .carousel-item {
-        display: block;
-    }
-
-    .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-    .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
-    .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
-        transition: none;
-    }
-
-    .carouselPrograms .carousel-inner .carousel-item-next,
-    .carouselPrograms .carousel-inner .carousel-item-prev {
-        position: relative;
-        transform: translate3d(0, 0, 0);
-    }
-
-    .carouselPrograms .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: absolute;
-        top: 0;
-        right: -33.333%;
-        z-index: -1;
-        display: block;
-        visibility: visible;
-    }
-
-    /* left or forward direction */
-    .carouselPrograms .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item,
-    .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-    .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-    }
-
-    /* farthest right hidden item must be abso position for animations */
-    .carouselPrograms .carousel-inner .carousel-item-prev.carousel-item-right {
-        position: absolute;
-        top: 0;
-        left: 0%;
-        z-index: -1;
-        display: block;
-        visibility: visible;
-    }
-
-    /* right or prev direction */
-    .carouselPrograms .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item,
-    .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-    .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible;
-    }
 }

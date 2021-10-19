@@ -414,8 +414,8 @@
                 position: absolute;
                 top: 35px;
                 left: -27px;
-                font-size: 0.8rem;
-                width: 90px
+                width: 90px;
+                font-size:18px;
             }
 
 #step-1::after {
@@ -436,7 +436,7 @@
 .progresses .progress {
     height: 6px;
     width: 100%;
-    top: 36px;
+    top: 30px;
     position: absolute;
     background-color: #f0f0f0;
     border-radius: 10px
@@ -453,5 +453,15 @@
 .form-area {
     background-color: #FAFAFA;
     padding: 10px 40px 60px;
-    margin: 10px 0px 60px;
+    margin: 50px 0px auto;
+}
+.form-select{
+    font-size:18px;
+}
+.form-control {
+    font-size: 18px;
+    height: 34px;
+}
+.form-label {
+    font-size: 18px;
 }

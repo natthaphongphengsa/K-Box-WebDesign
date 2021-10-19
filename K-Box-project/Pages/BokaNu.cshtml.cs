@@ -68,11 +68,7 @@ namespace K_Box_project.Pages
                 {
                     if (End < Start)
                     {
-                        if (End.Hour < 00)
-                        {
-
-                        }
-                        else
+                        if (End.Hour >= 00)
                         {
                             informations = new List<BookInfo>()
                                                 {
@@ -123,8 +119,21 @@ namespace K_Box_project.Pages
                         }
                         else
                         {
-                            ModelState.AddModelError("Overtime", "Du får max 3 timmar på bokningen");
-                            return Page();
+                            if (End < Start && (End.Hour > 00 && End.Hour < 03))
+                            {
+                                ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
+                                return Page();
+                            }
+                            else if(End.Hour == 00 && (End.Hour == 00 && End.Hour < 03))
+                            {
+                                ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
+                                return Page();
+                            }
+                            else
+                            {
+                                ModelState.AddModelError("Overtime", "Du får max 3 timmar på bokningen");
+                                return Page();
+                            }
                         }
                     }
                     else

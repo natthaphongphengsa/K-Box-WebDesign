@@ -6,6 +6,10 @@
     background-color: #000000;
     background-image: linear-gradient(147deg, #000000 0%, #434343 74%);
 }*/
+#BokaNu{
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+}
 .card {
     background-color: transparent;
     border: none;
@@ -414,8 +418,8 @@
                 position: absolute;
                 top: 35px;
                 left: -27px;
-                font-size: 0.8rem;
-                width: 90px
+                width: 90px;
+                font-size:18px;
             }
 
 #step-1::after {
@@ -436,7 +440,7 @@
 .progresses .progress {
     height: 6px;
     width: 100%;
-    top: 36px;
+    top: 30px;
     position: absolute;
     background-color: #f0f0f0;
     border-radius: 10px
@@ -453,5 +457,31 @@
 .form-area {
     background-color: #FAFAFA;
     padding: 10px 40px 60px;
-    margin: 10px 0px 60px;
+    margin: 50px 0px auto;
+}
+.form-select{
+    font-size:18px;
+}
+.form-control {
+    font-size: 18px;
+    height: 34px;
+}
+.form-label {
+    font-size: 18px;
+}
+@media (max-width:426px)
+{
+    .progresses ul li::after {
+        position: absolute;
+        top: 35px;
+        left: -27px;
+        width: 90px;
+        font-size: 11px;
+    }
+}
+#submit {
+    border: 3px solid;
+    border-radius: 16px;
+    padding: 0px 12px 0px 12px;
+    font-size: 18px;
 }

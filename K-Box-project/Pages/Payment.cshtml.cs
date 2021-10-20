@@ -37,8 +37,8 @@ namespace K_Box_project.Pages
 
             List<BookInfo> rumprices = new List<BookInfo>();
             rumprices.Add(new BookInfo { type = "Superior", text = "350", reaprice = 900 });
-            rumprices.Add(new BookInfo { type = "Premier", text = "550", reaprice = 1500 });
-            rumprices.Add(new BookInfo { type = "VIP", text = "200", reaprice = 550 });
+            rumprices.Add(new BookInfo { type = "Premier", text = "200", reaprice = 550 });
+            rumprices.Add(new BookInfo { type = "VIP", text = "550", reaprice = 1500 });
             rumprices.Add(new BookInfo { type = "Deluxe", text = "450", reaprice = 1200 });
 
             var preview = HttpContext.Session.Get<List<BookInfo>>("informationlist").ToList();

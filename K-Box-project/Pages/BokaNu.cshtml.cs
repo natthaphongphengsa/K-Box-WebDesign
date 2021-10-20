@@ -129,6 +129,11 @@ namespace K_Box_project.Pages
                                 ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
                                 return Page();
                             }
+                            else if(End < Start && totalttime.Hours > 3)
+                            {
+                                ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
+                                return Page();
+                            }
                             else
                             {
                                 ModelState.AddModelError("Overtime", "Du får max 3 timmar på bokningen");
@@ -143,8 +148,26 @@ namespace K_Box_project.Pages
                             ModelState.AddModelError("Overtime", "Du får max 3 timmar på bokningen");
                             return Page();
                         }
-                        ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
-                        return Page();
+                        else if (End > Start && (End.Hour < 00 && End.Hour > 03))
+                        {
+                            ModelState.AddModelError("Overtime", "Du får max 3 timmar på bokningen");
+                            return Page();
+                        }
+                        else if(End > Start)
+                        {
+                            if (End > Start && (Start.Hour > 0 && Start.Hour < 3))
+                            {
+                                ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
+                                return Page();
+                            }
+                            ModelState.AddModelError("Overtime", "Du får max 3 timmar på bokningen");
+                            return Page();
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
+                            return Page();
+                        }
                     }                    
                 }
             }

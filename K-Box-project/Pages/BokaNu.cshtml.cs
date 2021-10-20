@@ -112,8 +112,13 @@ namespace K_Box_project.Pages
                 {
                     if (End < Start)
                     {
-                        if (End < Start && (End.Hour > 00 && End.Hour < 03))
+                        if (End < Start && (End.Hour > 0 && End.Hour < 3))
                         {
+                            if (End < Start && (Start.Hour > 18 && (End.Hour > 0 && End.Hour < 3)))
+                            {
+                                ModelState.AddModelError("Overtime", "Du får max 3 timmar på bokningen");
+                                return Page();
+                            }
                             ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senare än {Start.ToString("t")}");
                             return Page();
                         }

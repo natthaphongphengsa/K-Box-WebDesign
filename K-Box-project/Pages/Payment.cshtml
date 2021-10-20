@@ -1,24 +1,26 @@
 ﻿@page
-@model K_Box_project.Pages.PreviewModel
+@model K_Box_project.Pages.PaymentModel
 @{
 }
-<section id="BokaNu" class="BokaNu" style="padding:140px 0px 100px 0px;">
-    <div class="container" data-aos="fade-up" >
-        <h1 id="Title-H1" class="text-center">BOKA TID</h1>
+<section id="BokaNu" class="BokaNu">
+    <div class="container" data-aos="fade-up" style="padding: 140px 0px 100px 0px;">
+        <h2 class="text-center" style="color: #f55161; font-size: 32px; font-weight: bold;">Tack för din bokning!</h2>
+        <h3 class="text-center" style="color: #f55161; font-size:20px;">Din plats är nu reseverad.</h3>
+        <h3 class="text-center" style="color: #f55161; font-size:20px;">Kvittot skickas till din e-post.</h3>
         <div class="progresses py-4">
             <ul class="d-flex align-items-center justify-content-between">
                 <li id="step-1" class="blue"></li>
                 <li id="step-2" class="blue"></li>
-                <li id="step-3"></li>
+                <li id="step-3" class="blue"></li>
             </ul>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
         <div class="d-flex row overflow-hidden" style="height:400px;padding-top:60px;">
-            <img src="@Model.Image" class="rounded" alt="@Model.Rum"/>
+            <img src="@Model.Image" class="rounded" alt="@Model.Rum" />
         </div>
-        <div class="container pt-3">
+        <div class="pt-3">
             <h2>Totalt tid: @ViewBag.Totalttime h</h2>
             <div class="row align-items-start">
                 <div class="col">
@@ -43,7 +45,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row align-items-end">
+            <div class="row align-items-end" style="height:60px;">
                 <div class="col">
                     <p>
                         Start tid*
@@ -68,8 +70,7 @@
             </div>
             <br />
             <hr />
-            <label class="h3" style=" color: #3f1e87; ">KONTAKTUPPGIFTER</label>
-            <div class="row align-items-end">
+            <div class="row" style="height:60px;">
                 <div class="col">
                     <p>
                         Förnamn*
@@ -85,7 +86,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row align-items-end">
+            <div class="row">
                 <div class="col">
                     <p>
                         E-post*
@@ -101,21 +102,30 @@
                     </p>
                 </div>
             </div>
-            <div class="row align-items-end">
+            <div class="row">
                 <div class="col">
                     <p>
-                        Meddelande(Frivillig)*
+                        Meddelande*
                         <br />
                         @Model.Message
                     </p>
                 </div>
             </div>
+
+            <div class="row align-items-end text-end " style="height:150px;">
+                <div class="col">
+                    <h2>Pris per timme: @Model.PricePerHour kr</h2>
+                    <span class="text-danger">@ViewBag.Reapris</span>
+                    <h2>Service pris: 49 kr</h2>
+                    <h2>Att betala: @Model.Totaltprice kr</h2>
+                    <h2 class="text-danger">Betala på plats!</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container d-flex justify-content-center p-2">
+                    <a asp-page="/Index" class="btn text-success bg-white btn-success" id="submit" style="width: auto; margin: 50px 0 80px 0;">Återgår till första sidan</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="container d-flex justify-content-center p-2" style="padding-top: 50px;">
-        <a asp-page="/Payment" class="btn text-success bg-white btn-success" id="submit" style="margin-top: 50px;">Slutför</a>
-    </div>   
-    <div class="container d-flex justify-content-center p-2">
-        <a href='javascript:history.go(-1)' class="btn text-black bg-white btn-dark" id="submit">Tillbaka</a>
     </div>
 </section>

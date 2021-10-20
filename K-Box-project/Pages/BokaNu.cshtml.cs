@@ -49,6 +49,9 @@ namespace K_Box_project.Pages
         [Required]
         public int People { get; set; }
         public string Message { get; set; }
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        public string Epost { get; set; }
 
         public IList<BookInfo> informations { get; set; }
         public void OnGet()

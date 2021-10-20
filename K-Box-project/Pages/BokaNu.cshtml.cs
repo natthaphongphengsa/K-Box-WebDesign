@@ -62,6 +62,8 @@ namespace K_Box_project.Pages
         {
             if (ModelState.IsValid)
             {
+                //Add check for that the persone-count is allowd with the room
+
                 TimeSpan offset = Date - Start.Date;
                 DateTime openingTime = DateTime.Today.Add(new TimeSpan(hours: 18, minutes: 0, seconds: 0).Add(offset));
                 DateTime closingTime = DateTime.Today.Add(new TimeSpan(hours: 3, minutes: 0, seconds: 0).Add(offset));

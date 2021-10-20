@@ -81,13 +81,14 @@ namespace K_Box_project.Pages
                 if ((End - Start).Hours > 3)
                 {
                     string time = Start.AddHours(3) > closingTime && Start.AddHours(3) < openingTime ? closingTime.ToString("t") : Start.AddHours(3).ToString("t");
-                    ModelState.AddModelError("Invalid", $"Ogiltig tid! Slut tiden måste vara senast {time}");
+                    ModelState.AddModelError("Overtime", $"Ogiltig tid! Slut tiden måste vara senast {time}");
                     return Page();
                 }
                 informations = new List<BookInfo>()
                     {
                     new BookInfo() { type = "firstname", text = $"{Firstname}" },
                     new BookInfo() { type = "lastname", text = $"{Lastname}" },
+                    new BookInfo() { type = "epost", text = $"{Epost}" },
                     new BookInfo() { type = "stad", text = $"{Stad}" },
                     new BookInfo() { type = "mobile", text = $"{Mobile}" },
                     new BookInfo() { type = "date", datetime = Date },

@@ -72,7 +72,7 @@ namespace K_Box_project.Pages
                 if (Start < DateTime.Now)
                 {
                     //Error message on past date
-                    ModelState.AddModelError("Invalid", $"Det har gått en natt! var väljligt byt ut datumet!");
+                    ModelState.AddModelError("Invalid", $"Det har gått en natt! var vänlig byt ut datumet!");
                     return Page();
                 }
                 if (Start == End)

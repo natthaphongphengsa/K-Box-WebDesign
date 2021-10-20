@@ -15,11 +15,11 @@
                 <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
-        <div class="d-flex row overflow-hidden justify-content-center" style="max-height:400px;padding-top:60px;">
-            <img src="@Model.Image" class="rounded"/>
+        <div class="d-flex row overflow-hidden" style="height:400px;padding-top:60px;">
+            <img src="@Model.Image" class="rounded" alt="@Model.Rum"/>
         </div>
         <div class="container pt-3">
-            <h3>Totalt tid: @ViewBag.Totalttime h</h3>
+            <h2>Totalt tid: @ViewBag.Totalttime h</h2>
             <div class="row align-items-start">
                 <div class="col">
                     <p>
@@ -113,7 +113,7 @@
         </div>
     </div>
     <div class="container d-flex justify-content-center p-2" style="padding-top: 50px;">
-        <a asp-page="/Payment" class="btn text-success bg-white btn-success" id="submit">Slutför</a>
+        <a asp-page="/Payment" class="btn text-success bg-white btn-success" id="submit" style="margin-top: 50px;">Slutför</a>
     </div>   
     <div class="container d-flex justify-content-center p-2">
         <a href='javascript:history.go(-1)' class="btn text-black bg-white btn-dark" id="submit">Tillbaka</a>

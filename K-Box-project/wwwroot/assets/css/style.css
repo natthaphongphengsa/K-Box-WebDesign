@@ -607,7 +607,8 @@ p{
 --------------------------------------------------------------*/
 section {
     margin-top: 3px;
-    padding: 60px 0;
+    padding: 0;
+    /*padding: 60px 0;*/
     overflow: hidden;
 }
 

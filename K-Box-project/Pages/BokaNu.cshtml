@@ -37,11 +37,11 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Rumtyp*</label>
-                    <select asp-for="Rum" id="disabledSelect" class="form-select">
-                        <option>VIP</option>
-                        <option>Deluxe</option>
-                        <option>Premier</option>
-                        <option>Superior</option>
+                    <select asp-for="Rum" id="Rum" class="form-select" onchange="UpdateRum()">
+                        <option value="VIP">VIP</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Premier">Premier</option>
+                        <option value="Superior">Superior</option>
                     </select>
                     <span asp-validation-for="Rum" class="text-danger"></span>
                 </div>
@@ -82,10 +82,10 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Antal personer*</label>
-                    <select asp-for="People" id="disabledSelect" class="form-select">
-                        @for (int i = 2; i <= 17; i+=2)
+                    <select asp-for="People" id="People" class="form-select">
+                        @for (int i = 3; i <= 14; i++)
                         {
-                            <option>@i</option>
+                            <option value="@i">@i</option>
                         }
                     </select>
                     <span asp-validation-for="Stad" class="text-danger"></span>
@@ -128,6 +128,53 @@
         </div>
     </div>
 </section>
+<script>
+    let PeopleList = document.querySelectorAll("#People>*");
+    document.querySelector("#People").value = null;
+    function UpdateRum() {
+        let room = document.querySelector("#Rum").value;
+        (room == "VIP") && VIPSelect();
+        (room == "Deluxe") && DeluxeSelect();
+        (room == "Premier") && PremierSelect();
+        (room == "Superior") && SuperiorSelect();
+    }
+    function VIPSelect() {//10-14
+        DissableAllPeople();
+        EnableSelected(10);
+        EnableSelected(11);
+        EnableSelected(12);
+        EnableSelected(13);
+        EnableSelected(14);
+    }
+    function DeluxeSelect() {//8-10
+        DissableAllPeople();
+        EnableSelected(8);
+        EnableSelected(9);
+        EnableSelected(10);
+    }
+    function PremierSelect() {//5-8
+        DissableAllPeople();
+        EnableSelected(5);
+        EnableSelected(6);
+        EnableSelected(7);
+        EnableSelected(8);
+    }
+    function SuperiorSelect() {//3-5
+        DissableAllPeople();
+        EnableSelected(3);
+        EnableSelected(4);
+        EnableSelected(5);
+    }
+    function DissableAllPeople() {
+        for (let i = 0; i < PeopleList.length; i++) {
+            PeopleList[i].hidden = true;
+        }
+    }
+    function EnableSelected(p) {
+        PeopleList.forEach((e) => { if (e.innerText == p) e.hidden = false; })
+    }
+    UpdateRum();
+</script>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

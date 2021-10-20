@@ -130,8 +130,8 @@
 </section>
 <script>
     let PeopleList = document.querySelectorAll("#People>*");
-    document.querySelector("#People").value = null;
     function UpdateRum() {
+        document.querySelector("#People").value = null;
         let room = document.querySelector("#Rum").value;
         (room == "VIP") && VIPSelect();
         (room == "Deluxe") && DeluxeSelect();

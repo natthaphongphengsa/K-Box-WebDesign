@@ -49,7 +49,7 @@ namespace K_Box_project.Pages
         [Required]
         public int People { get; set; }
         public string Message { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Var god och fyll i ditt e postadress")]
         [DataType(DataType.EmailAddress)]
         public string Epost { get; set; }
 

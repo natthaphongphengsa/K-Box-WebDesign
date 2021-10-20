@@ -498,6 +498,19 @@
         margin: auto;
     }
 }
+@media (max-width:575px) {
+    .pt-3 {
+        padding:12px;
+    }
+    .left-arrow, .right-arrow {
+        margin-bottom: -140px;
+    }
+}
+@media (max-width:768px){
+    .rumBG {
+        background-position: -338px 0px;
+    }
+}
 #submit {
     border: 3px solid;
     border-radius: 10px;

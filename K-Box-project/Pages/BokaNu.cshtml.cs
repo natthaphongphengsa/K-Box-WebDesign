@@ -43,10 +43,10 @@ namespace K_Box_project.Pages
         [DataType(DataType.Time)]
         public DateTime End { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Var god och välja ett rum!")]
         public string Rum { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Var god och välja antal personer!")]
         public int People { get; set; }
         public string Message { get; set; }
         [Required(ErrorMessage = "Var god och fyll i ditt e postadress")]
@@ -63,7 +63,6 @@ namespace K_Box_project.Pages
             if (ModelState.IsValid)
             {
                 //Add check for that the persone-count is allowd with the room
-
                 TimeSpan offset = Date - Start.Date;
                 DateTime openingTime = DateTime.Today.Add(new TimeSpan(hours: 18, minutes: 0, seconds: 0).Add(offset));
                 DateTime closingTime = DateTime.Today.Add(new TimeSpan(hours: 3, minutes: 0, seconds: 0).Add(offset));
@@ -73,6 +72,7 @@ namespace K_Box_project.Pages
                 if (Start < DateTime.Now)
                 {
                     //Error message on past date
+                    ModelState.AddModelError("Invalid", $"Det har gått en natt! var väljligt byt ut datumet!");
                     return Page();
                 }
                 if (Start == End)

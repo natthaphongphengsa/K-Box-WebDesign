@@ -104,10 +104,12 @@ p{
     background: blue;
     padding: 10px;
 }
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
-.back-to-top {
+.back-to-top{
     position: fixed;
     visibility: hidden;
     opacity: 0;
@@ -136,6 +138,23 @@ p{
         opacity: 1;
     }
 
+.back-to-top2 {
+    z-index: 996;
+    background: black;
+    border: none;
+    width: 120px;
+    height: 60px;
+    transition: all 0.4s;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+    .back-to-top2:hover {
+        background: none;
+        border: 5px solid black;
+        color: black;
+    }
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -1584,12 +1603,14 @@ section {
         margin-bottom: 0;
     }
 
-.contact .php-email-form {
+.kontakt-oss .php-email-form {
     /*box-shadow: 0 0 30px rgba(214, 215, 216, 0.4);*/
     margin-top: 45px;
     margin-bottom: 50px;
     padding: 30px;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
     .contact-us{
         margin-top: -8px;
@@ -1600,7 +1621,7 @@ section {
         padding-right: 10%;
     }
 
-    .contact .php-email-form .error-message {
+    .kontakt-oss .php-email-form .error-message {
         display: none;
         color: #fff;
         background: #ed3c0d;
@@ -1609,11 +1630,11 @@ section {
         font-weight: 600;
     }
 
-        .contact .php-email-form .error-message br + br {
+        .kontakt-oss .php-email-form .error-message br + br {
             margin-top: 25px;
         }
 
-    .contact .php-email-form .sent-message {
+    .kontakt-oss .php-email-form .sent-message {
         display: none;
         color: #fff;
         background: #18d26e;
@@ -1622,14 +1643,14 @@ section {
         font-weight: 600;
     }
 
-    .contact .php-email-form .loading {
+    .kontakt-oss .php-email-form .loading {
         display: none;
         background: #fff;
         text-align: center;
         padding: 15px;
     }
 
-        .contact .php-email-form .loading:before {
+        .kontakt-oss .php-email-form .loading:before {
             content: "";
             display: inline-block;
             border-radius: 50%;
@@ -1642,31 +1663,31 @@ section {
             animation: animate-loading 1s linear infinite;
         }
 
-    .contact .php-email-form .form-group {
+    .kontakt-oss .php-email-form .form-group {
         margin-bottom: 20px;
     }
 
-    .contact .php-email-form input, .contact .php-email-form textarea {
+    .kontakt-oss .php-email-form input, .kontakt-oss .php-email-form textarea {
         border-radius: 0;
         box-shadow: none;
         font-size: 14px;
     }
 
-        .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+        .kontakt-oss .php-email-form input:focus, .kontakt-oss .php-email-form textarea:focus {
             border-color: #106eea;
         }
 
-    .contact .php-email-form input {
+    .kontakt-oss .php-email-form input {
         padding: 20px;
         border-radius: 10px;
     }
 
-    .contact .php-email-form textarea {
+    .kontakt-oss .php-email-form textarea {
         padding: 12px 15px;
         border-radius: 10px;
     }
 
-    .contact .php-email-form button[type=submit] {
+    .kontakt-oss .php-email-form button[type=submit] {
         background: #106eea;
         border: 0;
         padding: 10px 30px;
@@ -1675,7 +1696,7 @@ section {
         border-radius: 4px;
     }
 
-        .contact .php-email-form button[type=submit]:hover {
+        .kontakt-oss .php-email-form button[type=submit]:hover {
             background: #3b8af2;
         }
 
@@ -1948,4 +1969,8 @@ section {
             text-align: center;
             margin-left: -30px;
         }
+
+    .kontakt-oss .php-email-form input{
+        
+    }
 }

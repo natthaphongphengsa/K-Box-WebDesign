@@ -116,6 +116,14 @@
                 <div class="col">
                     <h2>Pris per timme: @Model.PricePerHour kr</h2>
                     <span class="text-danger">@ViewBag.Reapris</span>
+                    @if (@Model.Student == "true")
+                    {
+                        <h2>Ingår student rabbatt<span class="text-danger">(!OBS måste visa student kort på kassan)</span></h2>
+                    }
+                    @if (@Model.Date.Value.Month == 10)
+                    {
+                        <h2>Rabatt 15 %</h2>
+                    }
                     <h2>Service pris: 49 kr</h2>
                     <h2>Att betala: @Model.Totaltprice kr</h2>
                     <h2 class="text-danger">Betala på plats!</h2>

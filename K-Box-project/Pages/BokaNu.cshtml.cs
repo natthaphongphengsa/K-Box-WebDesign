@@ -53,6 +53,8 @@ namespace K_Box_project.Pages
         [DataType(DataType.EmailAddress)]
         public string Epost { get; set; }
 
+        public bool Student { get; set; }
+
         public IList<BookInfo> informations { get; set; }
         public void OnGet(string rum)
         {
@@ -100,6 +102,8 @@ namespace K_Box_project.Pages
                     new BookInfo() { type = "rum", text = $"{Rum}" },
                     new BookInfo() { type = "message", text = $"{Message}" },
                     new BookInfo() { type = "people", text = $"{People.ToString()}" },
+                    new BookInfo() { type = "discount", text = "G36FUH78" },
+                    new BookInfo() { type = "Student", text = $"{Student.ToString()}"},
                     };
                 HttpContext.Session.Set("informationlist", informations);
                 return RedirectToPage("/Preview");

@@ -154,16 +154,17 @@
     }
     function PremierSelect() {//5-8
         DissableAllPeople();
+        EnableSelected(3);
+        EnableSelected(4);
+        EnableSelected(5);
+    }
+    function SuperiorSelect() {//3-5
+        DissableAllPeople();
         EnableSelected(5);
         EnableSelected(6);
         EnableSelected(7);
         EnableSelected(8);
-    }
-    function SuperiorSelect() {//3-5
-        DissableAllPeople();
-        EnableSelected(3);
-        EnableSelected(4);
-        EnableSelected(5);
+
     }
     function DissableAllPeople() {
         for (let i = 0; i < PeopleList.length; i++) {

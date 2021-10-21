@@ -22,9 +22,11 @@ namespace K_Box_project.Pages
         public int People { get; set; }
         public string Message { get; set; }
         public string Image { get; set; }
-        public int Totaltprice { get; set; }
+        public decimal Totaltprice { get; set; }
         public int PricePerHour { get; set; }
         public string Epost { get; set; }
+        public string Rabatt { get; set; }
+        public string Student { get; set; }
 
 
         public void OnGet()
@@ -54,6 +56,7 @@ namespace K_Box_project.Pages
             Image = images.First(i => i.type == Rum).text;
             People = int.Parse(preview.First(p => p.type == "people").text);
             Epost = preview.First(e => e.type == "epost").text;
+            Student = preview.First(e => e.type == "Student").text;
 
             var totalttime = TimeEnd > TimeStart ? TimeEnd - TimeStart : TimeEnd.AddDays(1) - TimeStart;
             ViewData["Totalttime"] = totalttime;
@@ -61,8 +64,17 @@ namespace K_Box_project.Pages
             PricePerHour = int.Parse(rumprices.First(r => r.type == $"{Rum}").text);
             if (totalttime.Hours < 03)
             {
-                int price = int.Parse(rumprices.First(p => p.type == $"{Rum}").text);
-                Totaltprice = totalttime.Hours * price + 49;
+                decimal price = int.Parse(rumprices.First(p => p.type == $"{Rum}").text);
+                if (Student == "true" || Date.Value.Month == 10 && Date.Value.Year == 2021)
+                {
+                    Totaltprice = totalttime.Hours * price + 49 * 0.15m;
+                }
+                else
+                {
+                    Totaltprice = totalttime.Hours * price + 49;
+                }
+
+
             }
             else if (totalttime.Hours == 03)
             {

@@ -387,7 +387,7 @@
         }
 
 .progress-bar {
-    background-color: #74e88f;
+    background-color: #f55161;
 }
 .progresses {
     position: relative;
@@ -411,7 +411,7 @@
 
             .progresses ul li.blue {
                 color: #5d616e;
-                background-color: #74e88f;
+                background-color: black;
             }
 
             .progresses ul li::after {

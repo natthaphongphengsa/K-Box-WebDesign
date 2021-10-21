@@ -49,8 +49,10 @@ namespace K_Box_project.Pages
         [Required(ErrorMessage = "Var god och välja antal personer!")]
         public int People { get; set; }
         public string Message { get; set; }
+
         [Required(ErrorMessage = "Var god och fyll i ditt e postadress")]
-        [DataType(DataType.EmailAddress)]
+        [DataType(DataType.EmailAddress, ErrorMessage = "felaktig epost")]
+        [EmailAddress(ErrorMessage = "felaktig epost")]
         public string Epost { get; set; }
 
         public bool Student { get; set; }

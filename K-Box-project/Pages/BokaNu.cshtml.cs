@@ -56,9 +56,10 @@ namespace K_Box_project.Pages
         public bool Student { get; set; }
 
         public IList<BookInfo> informations { get; set; }
-        public void OnGet()
+        public void OnGet(string rum)
         {
             Date = DateTime.Now;
+            Rum = rum;
         }
         public IActionResult OnPost()
         {

@@ -61,6 +61,7 @@
                         <option>03:00</option>
                     </select>
                     @*<input asp-for="@Model.Start" class="form-control" min="18:00"/>*@
+                    <span class="text-danger">@Html.ValidationMessage("Outoftime")</span>
                     <span asp-validation-for="@Model.Start" class="text-danger"></span>
                 </div>
                 <div class="form-group">

@@ -481,6 +481,9 @@
 }
 @media (max-width:426px)
 {
+    .footer{
+        display:contents;
+    }
     .progresses ul li::after {
         position: absolute;
         top: 35px;
@@ -516,4 +519,7 @@
     border-radius: 10px;
     width:135px;
     font-size: 18px;
+}
+.Social{
+    margin:8px;
 }

@@ -99,6 +99,7 @@ namespace K_Box_project.Pages
                     ModelState.AddModelError("Overtime", $"Ogiltig tid! Slut tiden måste vara senast {time}");
                     return Page();
                 }
+
                 informations = new List<BookInfo>()
                     {
                     new BookInfo() { type = "firstname", text = $"{Firstname}" },
@@ -113,7 +114,7 @@ namespace K_Box_project.Pages
                     new BookInfo() { type = "message", text = $"{Message}" },
                     new BookInfo() { type = "people", text = $"{People.ToString()}" },
                     new BookInfo() { type = "discount", text = "G36FUH78" },
-                    new BookInfo() { type = "Student", text = $"{Student.ToString()}"},
+                    new BookInfo() { type = "Student", student = Student},
                     };
                 HttpContext.Session.Set("informationlist", informations);
                 return RedirectToPage("/Preview");

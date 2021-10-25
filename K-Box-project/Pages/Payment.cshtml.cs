@@ -15,7 +15,7 @@ namespace K_Box_project.Pages
         public string Lastname { get; set; }
         public string Mobil { get; set; }
         public string Stad { get; set; }
-        public DateTime? Date { get; set; }
+        public DateTime Date { get; set; }
         public DateTime TimeStart { get; set; }
         public DateTime TimeEnd { get; set; }
         public string Rum { get; set; }
@@ -23,25 +23,21 @@ namespace K_Box_project.Pages
         public string Message { get; set; }
         public string Image { get; set; }
         public decimal Totaltprice { get; set; }
-        public int PricePerHour { get; set; }
+        public decimal Price { get; set; }
+        public decimal SalePrice { get; set; }
+        public decimal ReaPrice { get; set; }
         public string Epost { get; set; }
         public string Rabatt { get; set; }
-        public string Student { get; set; }
+        public bool Student { get; set; }
 
 
         public void OnGet()
         {
-            List<BookInfo> images = new List<BookInfo>();
-            images.Add(new BookInfo { type = "Superior", text = "assets/img/Superior.jpg" });
-            images.Add(new BookInfo { type = "Premier", text = "assets/img/premier.JPG" });
-            images.Add(new BookInfo { type = "VIP", text = "assets/img/vip.jpg" });
-            images.Add(new BookInfo { type = "Deluxe", text = "assets/img/Deluxe.jpg" });
-
-            List<BookInfo> rumprices = new List<BookInfo>();
-            rumprices.Add(new BookInfo { type = "Superior", text = "350", reaprice = 900 });
-            rumprices.Add(new BookInfo { type = "Premier", text = "200", reaprice = 550 });
-            rumprices.Add(new BookInfo { type = "VIP", text = "550", reaprice = 1500 });
-            rumprices.Add(new BookInfo { type = "Deluxe", text = "450", reaprice = 1200 });
+            List<BookInfo> rum = new List<BookInfo>();
+            rum.Add(new BookInfo { type = "Superior", text = "350", reaprice = 900, ImagesUrl = "assets/img/Superior.jpg" });
+            rum.Add(new BookInfo { type = "Premier", text = "200", reaprice = 550, ImagesUrl = "assets/img/premier.JPG" });
+            rum.Add(new BookInfo { type = "VIP", text = "550", reaprice = 1500, ImagesUrl = "assets/img/vip.jpg" });
+            rum.Add(new BookInfo { type = "Deluxe", text = "450", reaprice = 1200, ImagesUrl = "assets/img/Deluxe.jpg" });
 
             var preview = HttpContext.Session.Get<List<BookInfo>>("informationlist").ToList();
             Firstname = preview.First(u => u.type == "firstname").text;
@@ -53,45 +49,84 @@ namespace K_Box_project.Pages
             TimeEnd = preview.First(u => u.type == "timeend").datetime;
             Rum = preview.First(u => u.type == "rum").text;
             Message = preview.First(u => u.type == "message").text;
-            Image = images.First(i => i.type == Rum).text;
+            Image = rum.First(i => i.type == Rum).ImagesUrl;
             People = int.Parse(preview.First(p => p.type == "people").text);
             Epost = preview.First(e => e.type == "epost").text;
-            Student = preview.First(e => e.type == "Student").text;
+            Student = preview.First(e => e.type == "Student").student;
+
+            Price = decimal.Parse(rum.First(r => r.type == $"{Rum}").text);
+            ReaPrice = decimal.Parse(rum.First(r => r.type == $"{Rum}").text);
+
+            decimal service = 49;
+            decimal Sale = 0.15m;
+            int PromotionMonth = 10;
 
             var totalttime = TimeEnd > TimeStart ? TimeEnd - TimeStart : TimeEnd.AddDays(1) - TimeStart;
             ViewData["Totalttime"] = totalttime;
 
-            PricePerHour = int.Parse(rumprices.First(r => r.type == $"{Rum}").text);
             if (totalttime.Hours < 03)
             {
-                decimal price = int.Parse(rumprices.First(p => p.type == $"{Rum}").text);
-                if (Student == "true" || Date.Value.Month == 10 && Date.Value.Year == 2021)
+                decimal price = int.Parse(rum.First(p => p.type == $"{Rum}").text);
+                if (Student == true)
                 {
-                    Totaltprice = totalttime.Hours * price + 49 * 0.15m;
+                    if (Date.Month == PromotionMonth && Date.Year == 2021)
+                    {
+                        Totaltprice = ((totalttime.Hours * price) * (1 - Sale * 2)) + service;
+                    }
+                    else if (Date.Month != PromotionMonth && Date.Year == 2021)
+                    {
+                        Totaltprice = ((totalttime.Hours * price) * (1 - Sale)) + service;
+                    }
                 }
-                else
+                else if (Student == false)
                 {
-                    Totaltprice = totalttime.Hours * price + 49;
+                    if (Date.Month != PromotionMonth && Date.Year == 2021)
+                    {
+                        decimal totalprice = (totalttime.Hours * price) + service;
+                    }
+                    else if (Date.Month == PromotionMonth && Date.Year == 2021)
+                    {
+                        decimal totalprice = ((totalttime.Hours * price) * (1 - Sale * 2))+ service;
+                    }
                 }
-
-
             }
             else if (totalttime.Hours == 03)
             {
-                ViewData["Reapris"] = $"Rea pris på 3 timmar: {rumprices.First(p => p.type == $"{Rum}").reaprice} kr";
-                Totaltprice = rumprices.First(p => p.type == $"{Rum}").reaprice + 49;
-            }
-            switch (Rum)
-            {
-                case "Superior":
+                ViewData["Reapris"] = $"Rea pris på 3 timmar: {rum.First(p => p.type == $"{Rum}").reaprice} kr";
 
-                    break;
-                case "Premier":
-                    break;
-                case "VIP":
-                    break;
-                case "Deluxe":
-                    break;
+                if (Student == true)
+                {
+                    if (Date.Month == 10 && Date.Year == 2021)
+                    {
+                        Totaltprice = ((totalttime.Hours * ReaPrice) * (1 - Sale * 2)) + service;
+                    }
+                    else if (Date.Month != 10 && Date.Year == 2021)
+                    {
+                        Totaltprice = ((totalttime.Hours * ReaPrice) * (1 - Sale)) + service;
+                    }
+                }
+                else if (Student == false)
+                {
+                    if (Date.Month != PromotionMonth && Date.Year == 2021)
+                    {
+                        Totaltprice = (totalttime.Hours * ReaPrice) + service;
+                    }
+                    else if (Date.Month == PromotionMonth && Date.Year == 2021)
+                    {
+                        Totaltprice = ((totalttime.Hours * ReaPrice) * (1 - Sale)) + service;
+                    }
+                }
+                //else if (Student == true)
+                //{
+                //    if (Date.Month != PromotionMonth && Date.Year == 2021)
+                //    {
+                //        Totaltprice = ((totalttime.Hours * ReaPrice) * (1 - Sale)) + service;
+                //    }
+                //    else if (Date.Month == PromotionMonth && Date.Year == 2021)
+                //    {
+                //        Totaltprice = ((totalttime.Hours * ReaPrice) * (1 - Sale * 2)) + service;
+                //    }
+                //}
             }
         }
     }

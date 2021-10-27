@@ -151,11 +151,26 @@ p {
     color: white;
 }
 
-    .back-to-top2:hover {
+    .back-to-top2:hover, .featured-services .bokanu-btn:hover {
         background: none;
         border: 5px solid black;
         color: black;
     }
+
+.featured-services .bokanu-btn {
+    z-index: 996;
+    background: black;
+    border: none;
+    width: 120px;
+    height: 60px;
+    transition: all 0.4s;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -509,7 +524,6 @@ p {
     background: url("../img/room.png") top left;
     background-size: cover;
     position: relative;
-    background-position: center;
 }
 
 #hero:before {
@@ -764,23 +778,28 @@ section {
     z-index: 1;
 }
 
-    .featured-services .icon-box::before {
-        content: "";
-        position: absolute;
-        background: #cbe0fb;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        top: 100%;
-        transition: all 0.3s;
-        z-index: -1;
-    }
+.featured-services .container img {
+    width: 350px;
+    height: 200px;
+}
 
-    .featured-services .icon-box:hover::before {
-        background: #106eea;
-        top: 0;
-        border-radius: 0px;
-    }
+.featured-services .icon-box::before {
+    content: "";
+    position: absolute;
+    background: #cbe0fb;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 100%;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.featured-services .icon-box:hover::before {
+    background: #106eea;
+    top: 0;
+    border-radius: 0px;
+}
 
 .featured-services .icon {
     margin-bottom: 15px;
@@ -1619,7 +1638,7 @@ section {
     margin-top: -8px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #181818;
+    /*background-color: #181818;*/
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -1784,7 +1803,9 @@ section {
                 }
 
     #footer .footer-top {
-        padding: 30px 0;
+        margin-top: -10px;
+        padding: 20px 0 40px 0;
+        color: white;
     }
 
         #footer .footer-top .footer-contact {
@@ -1861,8 +1882,7 @@ section {
         #footer .footer-top .social-links a {
             font-size: 18px;
             display: inline-block;
-            background: white;
-            color: #f55161;
+            color: #fff;
             line-height: 1;
             padding: 8px 0;
             margin-right: 4px;
@@ -1874,14 +1894,12 @@ section {
         }
 
             #footer .footer-top .social-links a:hover {
-                background: #3b8af2;
-                color: #fff;
+                color: black;
                 text-decoration: none;
             }
 
     #footer .copyright {
         text-align: center;
-        float: left;
         padding-bottom: 20px;
         color: #fff;
     }
@@ -1897,6 +1915,19 @@ section {
         color: #fff;
     }
 
+.footer-top .adress p {
+    line-height: 0.8;
+}
+
+.footer-top .go-up i, .footer-top .go-up h5 {
+    color: black;
+    /*font-size: 30px;*/
+}
+
+    .footer-top .go-up i:hover, .footer-top .go-up h5:hover {
+        color: white;
+    }
+
 .carousel-item {
     min-height: 280px;
 }
@@ -1910,6 +1941,19 @@ section {
 .contact-us .top {
     padding-top: 30px;
 }
+
+.oppettider {
+    text-align: right;
+}
+
+.contact .adresses {
+    text-align: center;
+    margin: 30px 0;
+}
+
+    .contact .adresses .adress {
+        margin-top: 20px;
+    }
 
 @media (min-width: 968px) {
     .contact .php-email-form {
@@ -1938,10 +1982,10 @@ section {
         padding: 2px 0;
     }
 
-/*    .contact-us {
+    .contact-us {
         margin-top: -50px;
         padding-bottom: 10px;
-    }*/
+    }
 
         .contact-us .php-email-form {
             margin-top: 0;

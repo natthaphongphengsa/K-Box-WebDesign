@@ -1635,8 +1635,7 @@ section {
 }
 
 .contact-us {
-    margin-top: -8px;
-    padding-top: 20px;
+    margin-top: -30px;
     padding-bottom: 20px;
     /*background-color: #181818;*/
     padding-left: 10%;
@@ -1971,6 +1970,11 @@ section {
     }
 }
 
+.section-title .btn{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
 @media (max-width: 968px) {
     #footer .copyright, #footer .credits {
         float: none;
@@ -2012,6 +2016,12 @@ section {
             margin-left: -30px;
         }
 
-    .kontakt-oss .php-email-form input {
+    .footer-top .oppettider, #footer .info{
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .footer-top .oppettider li{
+        margin-left: -20px;
     }
 }
